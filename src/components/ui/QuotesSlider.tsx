@@ -3,23 +3,23 @@ import { useState, useEffect } from 'react';
 const frases = [
   {
     text: '"Ella ya está en ti. Solo necesita despertar."',
-    author: '— Eliana Martínez · @psicoelia'
+    author: '— Eliana Martínez · @psicoelia.co'
   },
   {
     text: '"No llegaste tarde a tu vida. Simplemente nadie te había enseñado a ponerte primero."',
-    author: '— Eliana Martínez · @psicoelia'
+    author: '— Eliana Martínez · @psicoelia.co'
   },
   {
     text: '"Sanar no es olvidar. Es aprender a cargar lo que viviste sin que te aplaste."',
-    author: '— Eliana Martínez · @psicoelia'
+    author: '— Eliana Martínez · @psicoelia.co'
   },
   {
     text: '"Tu cuerpo no te está fallando. Está cargando todo lo que no has podido soltar."',
-    author: '— Eliana Martínez · @psicoelia'
+    author: '— Eliana Martínez · @psicoelia.co'
   },
   {
     text: '"Femenina, poderosa y libre. Eso no es algo que construyes. Es algo que recuerdas."',
-    author: '— Eliana Martínez · @psicoelia'
+    author: '— Eliana Martínez · @psicoelia.co'
   }
 ];
 

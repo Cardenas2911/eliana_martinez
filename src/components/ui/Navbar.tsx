@@ -146,7 +146,7 @@ export default function Navbar() {
             transitionDelay: `${isMobileMenuOpen ? 800 : 0}ms`
           }}
         >
-          <a href="https://instagram.com/psicoelia" target="_blank" className="hover:text-rose transition-colors">Instagram</a>
+          <a href="https://www.instagram.com/psicoelia.co?utm_source=website&utm_medium=organic" target="_blank" className="hover:text-rose transition-colors">Instagram</a>
           <a href="mailto:info.psicoelia@gmail.com" className="hover:text-rose transition-colors">Correo</a>
         </div>
       </div>
