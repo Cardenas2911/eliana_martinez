@@ -1,11 +1,37 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Navbar from '../components/ui/Navbar';
+import HeroSection from '../components/sections/HeroSection.astro';
+import AboutSection from '../components/sections/AboutSection.astro';
+import MethodSection from '../components/sections/MethodSection.astro';
+import ProgramsSection from '../components/sections/ProgramsSection.astro';
+import ResourcesSection from '../components/sections/ResourcesSection.astro';
+import QuotesSlider from '../components/ui/QuotesSlider';
+import TipsSection from '../components/sections/TipsSection.astro';
+import ContactFooter from '../components/sections/ContactFooter.astro';
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="Eliana Martínez · Neuropsicóloga">
+  <Navbar client:load />
+  
+  <main>
+    <HeroSection />
+    <AboutSection />
+    <MethodSection />
+    <ProgramsSection />
+    <ResourcesSection />
+    
+    <section id="frases" class="py-24 px-6 md:px-12 lg:px-20 bg-rose-pale text-center">
+      <span class="inline-block text-[0.7rem] tracking-[0.2em] uppercase text-rose font-medium mb-3.5">
+        Para tu alma
+      </span>
+      <h2 class="font-heading text-4xl lg:text-[3rem] font-normal text-brown-dark leading-[1.2] mb-12">
+        Palabras que sanan
+      </h2>
+      <QuotesSlider client:visible />
+    </section>
+
+    <TipsSection />
+    <ContactFooter />
+  </main>
 </Layout>

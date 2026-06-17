@@ -1,23 +1,54 @@
-<!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
-</html>
+---
+import '../styles/global.css';
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { 
+  title = "Eliana Martínez · Neuropsicóloga",
+  description = "Neuropsicóloga y creadora del Método NEURO. Transformo pensamientos, emociones y vidas. Sesiones virtuales y programas online."
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="es" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    
+    <!-- Lordicon script -->
+    <script src="https://cdn.lordicon.com/lordicon.js" is:inline></script>
+  </head>
+  <body class="bg-cream text-text-main font-sans overflow-x-hidden antialiased selection:bg-rose-light selection:text-brown-dark">
+    <slot />
+    
+    <script>
+      // Lógica de animaciones al hacer scroll (Reveal)
+      document.addEventListener("DOMContentLoaded", () => {
+        const reveals = document.querySelectorAll('.reveal');
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              // Opcional: observer.unobserve(entry.target); si solo queremos animar 1 vez
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.15, rootMargin: "0px 0px -50px 0px" });
+        
+        reveals.forEach(r => observer.observe(r));
+      });
+    </script>
+  </body>
+</html>

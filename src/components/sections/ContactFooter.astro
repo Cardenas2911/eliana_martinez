@@ -1,0 +1,194 @@
+---
+---
+<Fragment>
+  {/* AGENDA SECTION */}
+  <section id="agenda" class="py-24 px-6 md:px-12 lg:px-20 bg-beige">
+    <div class="reveal max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+      <div>
+        <span class="inline-block text-[0.7rem] tracking-[0.2em] uppercase text-rose font-medium mb-3.5">
+          Reserva tu espacio
+        </span>
+        <h2 class="font-heading text-4xl lg:text-[3rem] font-normal text-brown-dark leading-[1.2] mb-4">
+          Agenda tu sesión
+        </h2>
+        <div class="w-[60px] h-0.5 bg-rose rounded-sm my-5 mb-6"></div>
+        <div class="space-y-4 text-[0.95rem] text-text-soft leading-[1.8] font-light mb-8">
+          <p>
+            El primer paso es el más valiente. Selecciona el tipo de sesión que necesitas y escríbeme directamente para coordinar horarios y disponibilidad.
+          </p>
+        </div>
+        
+        <div class="flex flex-col gap-3.5 mt-2.5">
+          <a href="https://wa.me/573118909491?text=Hola+Eliana+🤍+Vengo+desde+tu+web+y+quiero+agendar+mi+Sesión+de+Bienvenida+gratuita." target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 bg-white rounded-2xl p-5 border border-beige-dark transition-all duration-300 hover:border-rose hover:shadow-[0_4px_20px_rgba(201,137,124,0.15)] no-underline">
+            <span class="text-[1.6rem]">🌱</span>
+            <div>
+              <strong class="block text-[0.9rem] text-brown-dark font-medium mb-1">Sesión de Bienvenida</strong>
+              <span class="text-[0.8rem] text-text-soft font-light">L a V · 20 min</span>
+            </div>
+          </a>
+          <a href="https://wa.me/573118909491?text=Hola+Eliana+🤍+Estaba+en+tu+web+y+siento+que+necesito+un+espacio+para+mí.+Me+interesa+la+Sesión+Individual." target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 bg-white rounded-2xl p-5 border border-beige-dark transition-all duration-300 hover:border-rose hover:shadow-[0_4px_20px_rgba(201,137,124,0.15)] no-underline">
+            <span class="text-[1.6rem]">🌸</span>
+            <div>
+              <strong class="block text-[0.9rem] text-brown-dark font-medium mb-1">Sesión Individual</strong>
+              <span class="text-[0.8rem] text-text-soft font-light">Sábados · 50 min</span>
+            </div>
+          </a>
+          <a href="https://wa.me/573118909491?text=Hola+Eliana+🤍+Estoy+lista+para+transformarme.+Vengo+desde+la+web+y+quiero+información+del+Programa+Neuro." target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 bg-white rounded-2xl p-5 border border-beige-dark transition-all duration-300 hover:border-rose hover:shadow-[0_4px_20px_rgba(201,137,124,0.15)] no-underline">
+            <span class="text-[1.6rem]">✨</span>
+            <div>
+              <strong class="block text-[0.9rem] text-brown-dark font-medium mb-1">Programa Neuro</strong>
+              <span class="text-[0.8rem] text-text-soft font-light">L a V · 100 min</span>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-3xl p-10 border border-beige-dark">
+        <h3 class="font-heading text-[1.6rem] text-brown-dark mb-6">Solicita información 🤍</h3>
+        <form class="space-y-4" onsubmit="event.preventDefault(); const n=document.getElementById('a-name').value; const s=document.getElementById('a-service').value; const m=document.getElementById('a-msg').value; const t=`Hola Eliana 🤍 Soy ${n||'una mujer lista para empezar'}. Me interesa: ${s||'conocer más'}. ${m?'Me gustaría contarte: '+m:''}`; window.open(`https://wa.me/573118909491?text=${encodeURIComponent(t)}`,'_blank');">
+          <div>
+            <label for="a-name" class="block text-[0.78rem] tracking-[0.1em] uppercase text-text-soft font-medium mb-2">Nombre</label>
+            <input id="a-name" type="text" class="w-full p-3.5 border-[1.5px] border-beige-dark rounded-xl font-sans text-[0.9rem] text-text-main bg-cream outline-none transition-colors focus:border-rose" placeholder="Tu nombre" />
+          </div>
+          <div>
+            <label for="a-service" class="block text-[0.78rem] tracking-[0.1em] uppercase text-text-soft font-medium mb-2">Servicio de interés</label>
+            <select id="a-service" class="w-full p-3.5 border-[1.5px] border-beige-dark rounded-xl font-sans text-[0.9rem] text-text-main bg-cream outline-none transition-colors focus:border-rose">
+              <option value="Sesión de bienvenida">Sesión de bienvenida (Gratis)</option>
+              <option value="Sesión individual">Sesión individual</option>
+              <option value="Programa Neuro">Programa Neuro</option>
+              <option value="Programa Grupal">Programa Grupal</option>
+              <option value="No estoy segura aún">No estoy segura aún</option>
+            </select>
+          </div>
+          <div>
+            <label for="a-msg" class="block text-[0.78rem] tracking-[0.1em] uppercase text-text-soft font-medium mb-2">Mensaje (Opcional)</label>
+            <textarea id="a-msg" class="w-full p-3.5 border-[1.5px] border-beige-dark rounded-xl font-sans text-[0.9rem] text-text-main bg-cream outline-none transition-colors focus:border-rose resize-y min-h-[90px]" placeholder="Cuéntame brevemente por qué consultas..."></textarea>
+          </div>
+          <button type="submit" class="w-full bg-rose text-white p-4 rounded-full font-sans text-[0.82rem] tracking-[0.1em] uppercase font-medium cursor-pointer transition-all hover:bg-brown mt-2">
+            Ir a WhatsApp
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  {/* PAGOS SECTION */}
+  <section id="pagos" class="py-24 px-6 md:px-12 lg:px-20 bg-cream">
+    <div class="reveal max-w-7xl mx-auto">
+      <span class="inline-block text-[0.7rem] tracking-[0.2em] uppercase text-rose font-medium mb-3.5">
+        Fácil y seguro
+      </span>
+      <h2 class="font-heading text-4xl lg:text-[3rem] font-normal text-brown-dark leading-[1.2] mb-4">
+        Métodos de pago
+      </h2>
+      <div class="w-[60px] h-0.5 bg-rose rounded-sm my-5 mb-6"></div>
+      <p class="text-[0.95rem] text-text-soft leading-[1.75] font-light max-w-[560px]">
+        Acepto varios métodos de pago para que nada te detenga en tu camino de transformación.
+      </p>
+
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-5 mt-12">
+        <div class="bg-white rounded-[20px] p-7 text-center border border-beige-dark transition-all duration-300 hover:-translate-y-1 hover:border-rose">
+          <div class="text-[2.5rem] mb-3.5">🏦</div>
+          <div class="text-[0.95rem] font-medium text-brown-dark mb-2">Transferencia bancaria</div>
+          <p class="text-[0.82rem] text-text-soft font-light leading-[1.6]">Davivienda · Bancolombia. Te envío los datos por WhatsApp.</p>
+        </div>
+        <div class="bg-white rounded-[20px] p-7 text-center border border-beige-dark transition-all duration-300 hover:-translate-y-1 hover:border-rose">
+          <div class="text-[2.5rem] mb-3.5">💳</div>
+          <div class="text-[0.95rem] font-medium text-brown-dark mb-2">Tarjeta débito / crédito</div>
+          <p class="text-[0.82rem] text-text-soft font-light leading-[1.6]">Pago seguro online. Visa, Mastercard y todas las tarjetas nacionales.</p>
+        </div>
+        <div class="bg-white rounded-[20px] p-7 text-center border border-beige-dark transition-all duration-300 hover:-translate-y-1 hover:border-rose">
+          <div class="text-[2.5rem] mb-3.5">🌎</div>
+          <div class="text-[0.95rem] font-medium text-brown-dark mb-2">Internacional</div>
+          <p class="text-[0.82rem] text-text-soft font-light leading-[1.6]">PayPal y transferencia internacional. Para mujeres de todo el mundo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* CONTACTO SECTION */}
+  <section id="contacto" class="py-24 px-6 md:px-12 lg:px-20 bg-brown-dark">
+    <div class="reveal max-w-7xl mx-auto">
+      <span class="inline-block text-[0.7rem] tracking-[0.2em] uppercase text-rose-light font-medium mb-3.5">
+        Hablemos
+      </span>
+      <h2 class="font-heading text-4xl lg:text-[3rem] font-normal text-white leading-[1.2] mb-4">
+        Estoy aquí para ti
+      </h2>
+      <div class="w-[60px] h-0.5 bg-rose rounded-sm my-5 mb-6"></div>
+      <p class="text-[0.95rem] text-white/60 leading-[1.75] font-light max-w-[560px]">
+        No tienes que hacer este camino sola. Escríbeme y empezamos juntas.
+      </p>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 mt-12 items-start">
+        <div class="flex flex-col gap-4">
+          <a href="https://wa.me/573118909491?text=Hola+Eliana+🤍+Tengo+una+consulta+general.+Vengo+desde+tu+sitio+web." target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 bg-white/5 rounded-2xl p-5 border border-white/10 transition-all duration-300 hover:bg-rose/20 hover:border-rose-light no-underline">
+            <span class="text-[1.8rem]">💬</span>
+            <div>
+              <strong class="block text-[0.9rem] text-white font-medium mb-1">WhatsApp</strong>
+              <span class="text-[0.82rem] text-white/50 font-light">+57 311 890 9491 · Escríbeme</span>
+            </div>
+          </a>
+          <a href="https://instagram.com/psicoelia" target="_blank" class="flex items-center gap-4 bg-white/5 rounded-2xl p-5 border border-white/10 transition-all duration-300 hover:bg-rose/20 hover:border-rose-light no-underline">
+            <span class="text-[1.8rem]">📸</span>
+            <div>
+              <strong class="block text-[0.9rem] text-white font-medium mb-1">Instagram</strong>
+              <span class="text-[0.82rem] text-white/50 font-light">@psicoelia</span>
+            </div>
+          </a>
+          <a href="mailto:info.psicoelia@gmail.com" class="flex items-center gap-4 bg-white/5 rounded-2xl p-5 border border-white/10 transition-all duration-300 hover:bg-rose/20 hover:border-rose-light no-underline">
+            <span class="text-[1.8rem]">📧</span>
+            <div>
+              <strong class="block text-[0.9rem] text-white font-medium mb-1">Correo</strong>
+              <span class="text-[0.82rem] text-white/50 font-light">info.psicoelia@gmail.com</span>
+            </div>
+          </a>
+          <div class="flex items-center gap-4 bg-white/5 rounded-2xl p-5 border border-white/10 cursor-default">
+            <span class="text-[1.8rem]">🌍</span>
+            <div>
+              <strong class="block text-[0.9rem] text-white font-medium mb-1">Sesiones 100% virtuales</strong>
+              <span class="text-[0.82rem] text-white/50 font-light">Atiendo a mujeres de todo el mundo</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white/5 rounded-3xl p-10 border border-white/10">
+          <h3 class="font-heading text-[1.6rem] text-white mb-6">Envíame un mensaje 🤍</h3>
+          <form class="space-y-4" onsubmit="event.preventDefault(); const n=document.getElementById('c-name').value; const m=document.getElementById('c-msg').value; const t=`Hola Eliana 🤍 Soy ${n||'una mujer'}. ${m||'Quiero saber más sobre tu trabajo.'}`; window.open(`https://wa.me/573118909491?text=${encodeURIComponent(t)}`,'_blank');">
+            <div>
+              <label for="c-name" class="block text-[0.78rem] tracking-[0.1em] uppercase text-white/50 font-medium mb-2">Nombre</label>
+              <input id="c-name" type="text" class="w-full p-3.5 border-[1.5px] border-white/15 rounded-xl font-sans text-[0.9rem] text-white bg-white/5 outline-none transition-colors focus:border-rose-light placeholder:text-white/30" placeholder="Tu nombre" />
+            </div>
+            <div>
+              <label for="c-contact" class="block text-[0.78rem] tracking-[0.1em] uppercase text-white/50 font-medium mb-2">Correo o WhatsApp</label>
+              <input id="c-contact" type="text" class="w-full p-3.5 border-[1.5px] border-white/15 rounded-xl font-sans text-[0.9rem] text-white bg-white/5 outline-none transition-colors focus:border-rose-light placeholder:text-white/30" placeholder="¿Cómo te contacto?" />
+            </div>
+            <div>
+              <label for="c-msg" class="block text-[0.78rem] tracking-[0.1em] uppercase text-white/50 font-medium mb-2">Mensaje</label>
+              <textarea id="c-msg" class="w-full p-3.5 border-[1.5px] border-white/15 rounded-xl font-sans text-[0.9rem] text-white bg-white/5 outline-none transition-colors focus:border-rose-light placeholder:text-white/30 resize-y min-h-[90px]" placeholder="Cuéntame lo que necesitas..."></textarea>
+            </div>
+            <button type="submit" class="w-full bg-rose text-white p-4 rounded-full font-sans text-[0.82rem] tracking-[0.1em] uppercase font-medium cursor-pointer transition-all hover:bg-brown mt-2">
+              Enviar mensaje 🤍
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* FOOTER */}
+  <footer class="bg-brown-dark border-t border-white/10 px-6 md:px-12 lg:px-20 py-10 flex flex-col md:flex-row items-center justify-between gap-5 text-center md:text-left">
+    <div>
+      <div class="font-heading text-[1.2rem] text-rose-light font-normal">Eliana Martínez · Neuropsicóloga</div>
+      <div class="text-[0.78rem] text-white/35 mt-1">Femenina, poderosa y libre · @psicoelia</div>
+    </div>
+    <div class="flex flex-wrap justify-center gap-6">
+      <a href="#sobre-mi" class="text-[0.75rem] text-white/40 no-underline transition-colors hover:text-rose-light">Sobre mí</a>
+      <a href="#programas" class="text-[0.75rem] text-white/40 no-underline transition-colors hover:text-rose-light">Programas</a>
+      <a href="#recursos" class="text-[0.75rem] text-white/40 no-underline transition-colors hover:text-rose-light">Recursos</a>
+      <a href="#agenda" class="text-[0.75rem] text-white/40 no-underline transition-colors hover:text-rose-light">Agenda</a>
+      <a href="https://wa.me/573118909491?text=Hola+Eliana+🤍+Vengo+desde+el+pie+de+página+de+tu+web." target="_blank" rel="noopener noreferrer" class="text-[0.75rem] text-white/40 no-underline transition-colors hover:text-rose-light">WhatsApp</a>
+      <a href="https://instagram.com/psicoelia" target="_blank" class="text-[0.75rem] text-white/40 no-underline transition-colors hover:text-rose-light">Instagram</a>
+    </div>
+  </footer>
+</Fragment>
