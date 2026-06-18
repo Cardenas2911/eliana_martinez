@@ -1,6 +1,17 @@
 ---
 import BreathingApp from '../components/ui/BreathingApp';
 import '../styles/global.css';
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Respiración Guiada · Método NEURO™",
+  "description": "Herramienta interactiva de respiración guiada de 1 a 5 minutos para regular el sistema nervioso y disminuir la ansiedad. Diseñado por Eliana Martínez.",
+  "url": "https://psicoelia.com/respiracion",
+  "provider": {
+    "@type": "Person",
+    "name": "Eliana Martínez"
+  }
+};
 ---
 
 <!doctype html>
@@ -9,8 +20,10 @@ import '../styles/global.css';
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <title>Respiración Guiada · Método NEURO™</title>
-    <meta name="description" content="Ejercicios de respiración guiada para regular el sistema nervioso. Método NEURO por Eliana Martínez." />
+    <title>Respiración Guiada (1 Min) · Método NEURO™</title>
+    <meta name="description" content="Ejercicio interactivo de respiración guiada para regular tu sistema nervioso y encontrar la calma. Una herramienta gratuita de la neuropsicóloga Eliana Martínez." />
+    <meta name="robots" content="index, follow" />
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

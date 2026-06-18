@@ -9,9 +9,26 @@ import ResourcesSection from '../components/sections/ResourcesSection.astro';
 import QuotesSlider from '../components/ui/QuotesSlider';
 import TipsSection from '../components/sections/TipsSection.astro';
 import ContactFooter from '../components/sections/ContactFooter.astro';
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "HealthAndBeautyBusiness",
+  "name": "Eliana Martínez · Neuropsicóloga",
+  "image": "https://psicoelia.com/images/logo.jpeg",
+  "url": "https://psicoelia.com",
+  "telephone": "+573118909491",
+  "email": "info.psicoelia@gmail.com",
+  "description": "Neuropsicóloga y creadora del Método NEURO. Transformo pensamientos, emociones y vidas. Sesiones virtuales y programas online para mujeres.",
+  "sameAs": [
+    "https://www.instagram.com/psicoelia.co"
+  ]
+};
 ---
 
-<Layout title="Eliana Martínez · Neuropsicóloga">
+<Layout 
+  title="Eliana Martínez · Neuropsicóloga" 
+  description="Neuropsicóloga experta. Creadora del Método NEURO. Transformo pensamientos y emociones. Ofrezco sesiones 100% virtuales y programas online para mujeres."
+  schema={schema}
+>
   <Navbar client:load />
   
   <main>

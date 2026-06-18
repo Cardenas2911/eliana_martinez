@@ -4,11 +4,15 @@ import '../styles/global.css';
 interface Props {
   title?: string;
   description?: string;
+  noindex?: boolean;
+  schema?: Record<string, any>;
 }
 
 const { 
   title = "Eliana Martínez · Neuropsicóloga",
-  description = "Neuropsicóloga y creadora del Método NEURO. Transformo pensamientos, emociones y vidas. Sesiones virtuales y programas online."
+  description = "Neuropsicóloga y creadora del Método NEURO. Transformo pensamientos, emociones y vidas. Sesiones virtuales y programas online.",
+  noindex = false,
+  schema
 } = Astro.props;
 ---
 
@@ -21,6 +25,8 @@ const {
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     <meta name="description" content={description} />
+    {noindex ? <meta name="robots" content="noindex, nofollow" /> : <meta name="robots" content="index, follow" />}
+    {schema && <script type="application/ld+json" set:html={JSON.stringify(schema)} />}
     
     <!-- Open Graph -->
     <meta property="og:title" content={title} />

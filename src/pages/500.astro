@@ -1,0 +1,27 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/ui/Navbar';
+
+interface Props {
+    error: unknown
+}
+
+const { error } = Astro.props
+---
+
+<Layout title="Error del servidor | Eliana Martínez" noindex={true}>
+  <Navbar client:load />
+  
+  <main class="min-h-screen flex items-center justify-center bg-cream pt-20 px-6">
+    <div class="text-center max-w-lg mx-auto">
+      <span class="inline-block text-[0.8rem] tracking-[0.2em] uppercase text-rose font-medium mb-4">Error 500</span>
+      <h1 class="font-heading text-6xl md:text-7xl font-normal text-brown-dark mb-6">Algo salió mal</h1>
+      <p class="text-[1rem] text-text-soft leading-[1.75] font-light mb-10">
+        Nuestros servidores están tomando un pequeño respiro. Estamos trabajando para solucionarlo lo más pronto posible.
+      </p>
+      <a href="/" class="inline-block bg-rose text-white px-8 py-3.5 rounded-full text-[0.85rem] tracking-[0.1em] uppercase font-medium transition-all duration-300 hover:bg-brown">
+        Volver al inicio 🤍
+      </a>
+    </div>
+  </main>
+</Layout>
