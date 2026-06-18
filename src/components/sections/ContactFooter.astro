@@ -78,14 +78,14 @@
 
         <div class="bg-white/5 rounded-3xl p-10 border border-white/10">
           <h3 class="font-heading text-[1.6rem] text-white mb-6">Envíame un mensaje 🤍</h3>
-          <form class="space-y-4" onsubmit="event.preventDefault(); const n=document.getElementById('c-name').value; const s=document.getElementById('c-service').value; const m=document.getElementById('c-msg').value; const t=`Hola Eliana 🤍 Soy ${n||'una mujer'}. Me interesa: ${s}. ${m||'Quiero saber más sobre tu trabajo.'}`; window.open(`https://wa.me/573118909491?text=${encodeURIComponent(t)}`,'_blank');">
+          <form id="contact-form" class="space-y-4">
             <div>
               <label for="c-name" class="block text-[0.78rem] tracking-[0.1em] uppercase text-white/50 font-medium mb-2">Nombre</label>
-              <input id="c-name" type="text" class="w-full p-3.5 border-[1.5px] border-white/15 rounded-xl font-sans text-[0.9rem] text-white bg-white/5 outline-none transition-colors focus:border-rose-light placeholder:text-white/30" placeholder="Tu nombre" />
+              <input id="c-name" type="text" class="w-full p-3.5 border-[1.5px] border-white/15 rounded-xl font-sans text-[0.9rem] text-white bg-white/5 outline-none transition-colors focus:border-rose-light placeholder:text-white/30" placeholder="Tu nombre" required />
             </div>
             <div>
               <label for="c-contact" class="block text-[0.78rem] tracking-[0.1em] uppercase text-white/50 font-medium mb-2">Correo o WhatsApp</label>
-              <input id="c-contact" type="text" class="w-full p-3.5 border-[1.5px] border-white/15 rounded-xl font-sans text-[0.9rem] text-white bg-white/5 outline-none transition-colors focus:border-rose-light placeholder:text-white/30" placeholder="¿Cómo te contacto?" />
+              <input id="c-contact" type="text" class="w-full p-3.5 border-[1.5px] border-white/15 rounded-xl font-sans text-[0.9rem] text-white bg-white/5 outline-none transition-colors focus:border-rose-light placeholder:text-white/30" placeholder="¿Cómo te contacto?" required />
             </div>
             <div>
               <label for="c-service" class="block text-[0.78rem] tracking-[0.1em] uppercase text-white/50 font-medium mb-2">Servicio de interés</label>
@@ -101,7 +101,7 @@
               <label for="c-msg" class="block text-[0.78rem] tracking-[0.1em] uppercase text-white/50 font-medium mb-2">Mensaje</label>
               <textarea id="c-msg" class="w-full p-3.5 border-[1.5px] border-white/15 rounded-xl font-sans text-[0.9rem] text-white bg-white/5 outline-none transition-colors focus:border-rose-light placeholder:text-white/30 resize-y min-h-[90px]" placeholder="Cuéntame lo que necesitas..."></textarea>
             </div>
-            <button type="submit" class="w-full bg-rose text-white p-4 rounded-full font-sans text-[0.82rem] tracking-[0.1em] uppercase font-medium cursor-pointer transition-all hover:bg-brown mt-2">
+            <button type="submit" id="c-submit-btn" class="w-full bg-rose text-white p-4 rounded-full font-sans text-[0.82rem] tracking-[0.1em] uppercase font-medium cursor-pointer transition-all hover:bg-brown mt-2">
               Enviar mensaje 🤍
             </button>
           </form>
@@ -125,4 +125,50 @@
       <a href="https://www.instagram.com/psicoelia.co?utm_source=website&utm_medium=organic&utm_campaign=footer_link" target="_blank" class="text-[0.75rem] text-white/40 no-underline transition-colors hover:text-rose-light">Instagram</a>
     </div>
   </footer>
+
+  <script>
+    const form = document.getElementById('contact-form');
+    if (form) {
+      const btn = document.getElementById('c-submit-btn');
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const n = document.getElementById('c-name').value;
+        const c = document.getElementById('c-contact').value;
+        const s = document.getElementById('c-service').value;
+        const m = document.getElementById('c-msg').value;
+        
+        const originalText = btn.innerText;
+        btn.innerText = 'Enviando...';
+        btn.disabled = true;
+
+        try {
+          const formData = new FormData();
+          formData.append('Nombre', n);
+          formData.append('Contacto', c);
+          formData.append('Servicio', s);
+          formData.append('Mensaje', m);
+
+          fetch('https://script.google.com/macros/s/AKfycbxBZ-hpVjCFknXdQRr-z4oL6Wz3YOg1wnzSfjG9Y9WYVwXFJCZjm7HkBz_ztA_umZ2H/exec', {
+            method: 'POST',
+            body: formData,
+            mode: 'no-cors'
+          });
+        } catch(err) {
+          console.error(err);
+        }
+
+        const t = `Hola Eliana 🤍 Soy ${n || 'una mujer'}. Me interesa: ${s}. ${m || 'Quiero saber más sobre tu trabajo.'}`;
+        window.open(`https://wa.me/573118909491?text=${encodeURIComponent(t)}`, '_blank');
+        
+        setTimeout(() => {
+          btn.innerText = '¡Enviado!';
+          setTimeout(() => {
+            btn.innerText = originalText;
+            btn.disabled = false;
+            form.reset();
+          }, 2000);
+        }, 500);
+      });
+    }
+  </script>
 </Fragment>
